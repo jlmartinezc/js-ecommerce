@@ -1,0 +1,15 @@
+/* Core */
+@import 'base/variables';
+@import 'base/reset';
+
+/* Partials */
+@import 'layout/header';
+@import 'layout/footer';
+
+/* Pages */
+@import 'pages/index';
+@import 'pages/products';
+@import 'pages/product-details';
+@import 'pages/about-us';
+@import 'pages/contact';
+@import 'pages/profile';

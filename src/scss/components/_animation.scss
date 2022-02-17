@@ -1,0 +1,6 @@
+@mixin animation($animation) {
+    -webkit-transform: $animation;
+    -o-transform: $animation;
+    -moz-transform: $animation;
+    transform: $animation;
+}

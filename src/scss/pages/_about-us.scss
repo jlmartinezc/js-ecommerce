@@ -1,0 +1,121 @@
+@import '../components/flex';
+
+/* list colors */
+$colors: #f5f5f5, #ffffff, #cccccc;
+
+/* About - Beginning */
+.about-us {
+
+    .about-us-wrapper {
+
+        .about-us-data {
+            padding: 50px;
+            background-color: nth($colors, 1);
+
+            img {
+                width: 500px;
+            }
+
+            .info-about {
+                text-align: justify;
+                @include flex-container(row, space-betwen, center);
+
+            }
+
+            .about-us-video {
+                @include flex-container(column, space-between, unset);
+
+                iframe {
+                    width: 700px;
+                    height: 500px;
+                    margin: 0 auto;
+                }                
+            }
+            
+        }
+        
+    }
+
+    .about-us-team {
+
+        padding: 5px 50px 45px 50px;
+        background-color: nth($colors, 2);
+
+        h2{
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .team {
+            border-radius: 5px;
+            @include flex-container(row, center, center);
+
+            .card {
+                margin: 5px;
+                padding: 25px;
+                border-radius: 5px;
+                border: 1px nth($colors, 3) solid;
+                @include flex-container(column, space-around, unset);
+
+
+                .card-header {
+
+                    img {
+                        margin: auto;
+                        width: 100px;
+                        height: 100px;
+                        display: block;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Media Querys About Us */
+@media screen and (max-width: 900px) {
+    .about-us {
+
+        .about-us-wrapper {
+
+            .about-us-data {
+                padding: 20px;
+
+                img  {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about-us {
+
+        .about-us-wrapper {
+
+            .about-us-data {
+
+                .about-us-video {
+
+                    iframe {
+                        display:block;
+                    }
+                }
+
+                
+            }
+        }
+
+        .about-us-team {
+            padding: 15px;
+
+            .team {
+                flex-direction: column;
+            }  
+        }
+    }  
+}
+
+/* About - End */

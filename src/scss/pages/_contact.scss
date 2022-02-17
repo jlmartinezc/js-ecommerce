@@ -1,0 +1,93 @@
+@import '../components/flex';
+
+/* list colors */
+$colors: #adadad, #ccc;
+
+/* Contact - Beginning */
+.contact {
+    padding: 50px;
+
+    .contact-wrapper {
+        border-radius: 15px;
+        border: 1px nth($colors, 1) solid;
+        @include flex-container(row, space-around, unset);
+
+        .contact-info {
+            padding: 50px;
+            flex-basis: 30%;
+            color: $main-white-color;
+            background-color: $first-color;
+            @include flex-container(column, space-around, unset);
+
+            ul {
+                padding-left: 0 ;
+
+                li {
+                    p {
+                        display: inline-block;
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+
+        .contact-form {
+            padding: 50px;
+            @include flex-container(column, space-between, unset);
+
+            h1 + p + form {
+                padding: 5px;
+            }
+
+            form {
+
+                input, textarea {
+                    resize: none;
+                    width: 100%;
+                    padding: 12px 20px;
+                    margin: 8px 0;
+                    display: inline-block;
+                    border: 1px solid nth($colors, 2);
+                    border-radius: 4px;
+                    box-sizing: border-box;
+                }
+
+                .send {
+                    font-size: 1.2rem;
+
+                    &:hover {
+                        color: $main-white-color;
+                        background: $sixth-color;
+                    }
+                }                
+            }
+        }
+    }
+}
+
+/* Media Querys Contact */
+@media screen and (max-width: 768px) {
+    .contact{
+        padding: 0;
+
+        .contact-wrapper {
+            flex-direction: column;
+
+            .contact-info{
+                gap: 15px;
+                flex-direction: column;
+            }
+
+            .contact-form {
+                gap: 15px;
+                padding: 10px;
+
+                h1 + p + form {
+                    padding: 15px;
+                }
+            }
+        }
+    }
+}
+
+/* Contact - End */

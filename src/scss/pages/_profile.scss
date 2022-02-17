@@ -1,0 +1,91 @@
+@import '../components/flex';
+
+/* list colors */
+$colors: #fff, #adadad;
+
+
+/* Profile - Beginning */
+.profile {
+    padding: 50px;
+
+    .profile-wrapper {
+        border-radius: 15px;
+        border: 1px nth($colors, 2) solid;
+        @include flex-container(row, space-between, unset);
+
+        .profile-data {
+            flex-basis: 25%;
+            color: $main-white-color;            
+            background-color: $third-color; 
+            @include flex-container(column, space-around, center);
+
+            .user {
+                width: auto;
+                padding: 15px;
+                list-style-type: none; 
+                @include flex-container(column, space-around, center, wrap, flex-start);
+
+                ul {
+                    @include flex-container(row, space-evenly, center);
+                    
+                    li {
+                        margin: 0 8px;
+
+                        a {
+                            color: $main-white-color;
+                        } 
+                    }
+                }
+            }
+        }
+
+        .profile-buy {
+            flex-basis: 75%;
+
+            .card {
+                margin: 25px;
+
+                &:not(:last-child) {
+                    border-bottom: 1px nth($colors, 2) solid;
+                }
+
+                .card-body { 
+
+                    nav { 
+
+                        ul {
+                            @include flex-container(row, space-around, center);
+
+                            li {
+                                margin: 5px; 
+
+                                a {
+                                    color: nth($colors , 1);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+    }
+}
+
+/* Media Querys Profile */
+@media screen and (max-width: 768px) {
+    .profile {
+        padding: 5px;
+
+        .profile-wrapper {
+            flex-direction: column;
+        }
+    }
+} 
+
+/* Profile - End */

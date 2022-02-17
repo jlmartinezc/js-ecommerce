@@ -1,0 +1,145 @@
+@import '../components/flex';
+@import '../components/buttons';
+@import '../components/animation';
+
+
+/* list colors */
+$colors: #fff, #f5f5f5, #dfe5e9, #0000;
+
+
+/* Product - Beginning */
+.products {
+    padding: 50px;
+    background-color: nth($colors, 2);
+    
+    .products-wrapper {
+
+        .product-content {
+            background: nth($colors, 1);
+            border-radius: 10px;
+            margin: 12px 0 20px 0;
+            border: 2px solid nth($colors, 3);
+            animation: animation 1000ms;
+            box-shadow: 0 1px 4px 0 nth($colors, 4);
+            animation-timing-function: ease-in-out;
+            @include flex-container(row, space-between, center);
+
+            .prodcut-image {
+                width: 15rem;
+                height: 15rem;
+                background: nth($colors, 2);
+            }
+
+            .product-details {
+                padding: 15px;
+                @include flex-container(column, space-between, unset, wrap);
+
+                .product-info {
+
+                    .name {
+                        
+                        a {
+                            color: $secondary-color;
+                            text-decoration: none;
+                        }
+                    }
+
+                    .price-container {
+
+                        span {
+                            font-size: 1.25em;
+                            color: $fifth-color;
+                        }
+                    }
+                }
+            }
+
+            .product-interaction {
+                margin: 25px 100px;
+                @include flex-container(column, space-around, center);
+
+                .shopping-buttons {
+                    @include flex-container(column, unset, unset);
+
+                    button {
+                        @extend %button
+                    }
+
+                    .see-more {
+                        background: none;
+                        color: $third-color;
+                        border: 2px $third-color solid;
+                    }
+
+                    .buy {
+                        border: none;
+                        color: nth($colors, 1);
+                        background: $sixth-color;
+                    }
+                }
+
+                .rating {
+                    margin-bottom: 25px;
+
+                    .checked {
+                        color: $fourth-color; 
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* Media Querys Product */
+@media screen and (max-width: 900px) {
+    .products {
+        padding: 10px;
+
+        .products-wrapper {
+
+            .product-content {
+
+                .prodcut-image {
+
+                    width: 35rem;
+                }
+            }
+        }        
+    }    
+}
+
+@media screen and (max-width: 780px) { 
+    .products {
+
+        .products-wrapper {
+
+            .product-content {
+                align-items: center;
+                flex-direction: column;
+
+                .prodcut-image {
+                    width: 15rem;
+                    height: 15rem;
+                }
+
+                .product-interaction {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+
+/* Animation */
+@keyframes animation {
+    0% {
+        @include animation(scale(0.5));
+    }
+     
+    100% {
+        @include animation(scale(1));
+    }
+}
+
+/* Product - End */
